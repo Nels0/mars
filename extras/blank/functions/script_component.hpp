@@ -1,1 +1,0 @@
-#include "\z\mars\addons\blank\script_component.hpp"

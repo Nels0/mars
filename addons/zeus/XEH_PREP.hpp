@@ -1,2 +1,0 @@
-PREP(openZeus);
-PREP(setupZeus);
