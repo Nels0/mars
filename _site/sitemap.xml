@@ -4,9 +4,6 @@
 <loc>http://127.0.0.1:4000/404/</loc>
 </url>
 <url>
-<loc>http://127.0.0.1:4000/about/</loc>
-</url>
-<url>
 <loc>http://127.0.0.1:4000/docs/development/attributes/</loc>
 </url>
 <url>
@@ -19,13 +16,13 @@
 <loc>http://127.0.0.1:4000/docs/development/</loc>
 </url>
 <url>
-<loc>http://127.0.0.1:4000/docs/missions/</loc>
-</url>
-<url>
 <loc>http://127.0.0.1:4000/docs/</loc>
 </url>
 <url>
 <loc>http://127.0.0.1:4000/docs/user/</loc>
+</url>
+<url>
+<loc>http://127.0.0.1:4000/docs/missions/</loc>
 </url>
 <url>
 <loc>http://127.0.0.1:4000/docs/development/menu-strip/</loc>
