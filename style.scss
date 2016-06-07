@@ -515,7 +515,7 @@ td {
 	padding: 100px 0;
 	font-size: 28px;
 	text-transform: uppercase;
-	letter-spacing: 22px;
+	letter-spacing: 20px;
 }
 
 .card {
@@ -555,6 +555,71 @@ footer {
 	float: left;
 	width: 100%;
 	padding: 25px 0 100px 0;
+}
+
+.card-wide {
+	float: left;
+	width: 100%;
+	padding: 50px;
+
+    h1 {
+        text-align: left;
+        font-size: 24px;
+        font-weight: 100;
+    }
+
+    p {
+        text-align: justify;
+        font-size: 16px;
+        font-weight: 100;
+        line-height: 36px;
+    }
+}
+
+.contrast {
+	position: absolute;
+	background: #F2F2F2;
+	left: 0;
+	width: 100%;
+	top: 1000px;
+    padding: 25px 0;
+
+    .contrast-inner {
+        max-width: 1000px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.footnote {
+	position: absolute;
+	background: #FFF;
+	left: 0;
+	width: 100%;
+	top: 2030px;
+	padding: 150px 0;
+	text-align: center;
+}
+
+.button-big {
+    font-size: 28px;
+	font-weight: 100;
+	text-decoration: none !important;
+	background: #bd2c2c;
+	color: #FFF;
+	padding: 15px 30px;
+
+    &:hover {
+        color: #FFF;
+        background: #000;
+    }
+}
+
+.button-disabled {
+    opacity: 0.5;
+    background: #bd2c2c !important;
+	color: #FFF !important;
+    cursor: default;
 }
 
 @import "highlights";
