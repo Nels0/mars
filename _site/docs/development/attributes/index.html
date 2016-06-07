@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Attributes - Mars</title>
+
+            <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Mars gives players full control over how their mission is played, in real time.">
+    <meta property="og:description" content="Mars gives players full control over how their mission is played, in real time." />
+    
+    <meta name="author" content="Mars" />
+
+    
+    <meta property="og:title" content="Attributes" />
+    <meta property="twitter:title" content="Attributes" />
+    
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <link rel="stylesheet" href="http://127.0.0.1:4000/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/style.css" />
+        <link rel="alternate" type="application/rss+xml" title="Mars - Mars gives players full control over how their mission is played, in real time." href="http://127.0.0.1:4000/feed.xml" />
+        <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/jameslkingsley/Mars/master/extras/logo/favicon.png">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://127.0.0.1:4000/js/toc.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <div class="nav_left">
+                    <a href="https://github.com/marseditor/mars" class="fa fa-github"></a>
+                    <a href="https://mars-slackin.herokuapp.com" class="fa fa-slack"></a>
+                </div>
+                <a href="http://127.0.0.1:4000" class="logo_img">
+                    <span class="mars-version">1.0.0</span>
+                </a>
+                <div class="nav_right">
+                    <a href="http://127.0.0.1:4000/docs" class="nav_link" style="padding-right: 0 !important">Docs</a>
+                    <a href="http://127.0.0.1:4000/news" class="nav_link">News</a>
+                    <a href="http://127.0.0.1:4000/about" class="nav_link">About</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="separator"></div>
+        
+        <main>
+            <div class="inner">
+                <div class="toc_wrapper">
+    <div class="toc_title">Contents</div>
+    <div id="toc"></div>
+</div>
+
+<span class="docs_title">Attributes</span>
+<div class="docs_content" id="content"><h1 id="what-is-the-attributes-framework">What is the attributes framework?</h1>
+<p>The attributes framework is quite simply a set of code that handles the UI stuff for you. This means you don’t have to spend dozens of hours making your own UI dialog just to set some values. Instead you just write a simple attributes config and call the function to open it.</p>
+
+<h1 id="why-do-i-have-to-use-it">Why do I have to use it?</h1>
+<p>A consistent UI design throughout Mars is a main priority and in order to achieve this, <em>almost</em> all dialogs must be created using the attributes framework. Not only that but it centralises the UI code into a single component, as appose to multiple components all doing their own thing when it comes to UI.</p>
+
+<h1 id="how-do-i-use-it">How do I use it?</h1>
+<ol>
+  <li>Add a <code class="highlighter-rouge">CfgAttributes.hpp</code> file to your component’s root folder</li>
+  <li>Place the following config in the file</li>
+  <li>Include <code class="highlighter-rouge">CfgAttributes.hpp</code> in your <code class="highlighter-rouge">config.cpp</code> <strong>after</strong> the <code class="highlighter-rouge">script_component.hpp</code> include</li>
+  <li>Go through the various control types available in the sidebar</li>
+</ol>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nf">GVARMAIN</span><span class="p">(</span><span class="n">attributes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">class</span> <span class="nc">ADDON</span> <span class="p">{</span>
+        <span class="k">class</span> <span class="nc">YourAttributeName</span> <span class="p">{</span>
+            <span class="n">displayName</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+            <span class="n">actionConfirm</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+            <span class="n">actionCancel</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+            <span class="k">class</span> <span class="nc">AttributeCategories</span> <span class="p">{</span>
+                <span class="k">class</span> <span class="nc">YourCategoryOne</span> <span class="p">{</span>
+                    <span class="k">class</span> <span class="nc">AttributeItems</span> <span class="p">{</span>
+                        <span class="k">class</span> <span class="nc">YourItemOne</span> <span class="p">{</span>
+                            <span class="n">displayName</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+                            <span class="n">tooltipText</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+                            <span class="k">class</span> <span class="nc">AttributeControls</span> <span class="p">{</span>
+                                <span class="k">class</span> <span class="nc">YourControlOne</span> <span class="p">{};</span>
+                            <span class="p">};</span>
+                        <span class="p">};</span>
+                    <span class="p">};</span>
+                <span class="p">};</span>
+            <span class="p">};</span>
+        <span class="p">};</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<p>A more fuller example can be found <a href="https://github.com/jameslkingsley/Mars/blob/master/addons/environment/CfgAttributes.hpp">here</a>.</p>
+
+<h1 id="controls">Controls</h1>
+
+<h2 id="combo">Combo</h2>
+
+<h3 class="no-margin" id="properties">Properties</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>condition</td>
+      <td>string</td>
+      <td>"true"</td>
+      <td>Condition that must return true to show the control. Arguments passed to the condition are <code class="highlighter-rouge">[selection&lt;ARRAY&gt;]</code></td>
+    </tr>
+    <tr>
+      <td>values</td>
+      <td>string/array</td>
+      <td>[]</td>
+      <td>Values to use for each combo box item (<a href="https://community.bistudio.com/wiki/lbSetData">lbSetData</a>). You can either provide an array of values or a code string that returns an array of values</td>
+    </tr>
+    <tr>
+      <td>labels</td>
+      <td>string/array</td>
+      <td>[]</td>
+      <td>Text to use for each combo box item. You can either provide an array of strings or a code string that returns an array of strings</td>
+    </tr>
+    <tr>
+      <td>selected</td>
+      <td>number/string</td>
+      <td>""</td>
+      <td>Default selected option when first creating the control. It must match the data type of the items in <code class="highlighter-rouge">values</code>. If it’s a string then it’s <code class="highlighter-rouge">call compile</code>'d and must return the value</td>
+    </tr>
+    <tr>
+      <td>expression</td>
+      <td>string</td>
+      <td>""</td>
+      <td>Code to run when the user presses the final OK button. It will only run if the value of the control changes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="events">Events</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>onLBSelChanged</td>
+      <td>Fires when the selection in the combo box has changed. The left mouse button has been released and the new selection is fully made.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="examples">Examples</h3>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Range</span> <span class="p">{</span>
+    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">"COMBO"</span><span class="p">;</span>
+    <span class="n">values</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">};</span>
+    <span class="n">labels</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s">"1000m"</span><span class="p">,</span> <span class="s">"2000m"</span><span class="p">,</span> <span class="s">"3000m"</span><span class="p">,</span> <span class="s">"4000m"</span><span class="p">,</span> <span class="s">"5000m"</span><span class="p">};</span>
+    <span class="n">selected</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+    <span class="n">expression</span> <span class="o">=</span> <span class="n">QUOTE</span><span class="p">([</span><span class="n">ARR_2</span><span class="p">(</span><span class="n">_this</span><span class="p">,</span> <span class="err">'</span><span class="n">range</span><span class="err">'</span><span class="p">)]</span> <span class="n">call</span> <span class="n">FUNC</span><span class="p">(</span><span class="n">doThisFunction</span><span class="p">));</span>
+    <span class="n">onLBSelChanged</span> <span class="o">=</span> <span class="n">QUOTE</span><span class="p">(</span><span class="n">systemChat</span> <span class="n">str</span> <span class="n">_this</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Years</span> <span class="p">{</span>
+    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">"COMBO"</span><span class="p">;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="s">"_years = []; for '_i' from 1982 to 2050 do {_years pushBack _i}; _years"</span><span class="p">;</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="s">"_years = []; for '_i' from 1982 to 2050 do {_years pushBack str _i}; _years"</span><span class="p">;</span>
+    <span class="n">selected</span> <span class="o">=</span> <span class="s">"date select 0"</span><span class="p">;</span>
+    <span class="n">expression</span> <span class="o">=</span> <span class="n">QFUNC</span><span class="p">(</span><span class="n">doThisFunction</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<h2 id="slider">Slider</h2>
+
+<h3 class="no-margin" id="properties-1">Properties</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>condition</td>
+      <td>string</td>
+      <td>"true"</td>
+      <td>Condition that must return true to show the control. Arguments passed to the condition are <code class="highlighter-rouge">[selection&lt;ARRAY&gt;]</code></td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td>array</td>
+      <td>[]</td>
+      <td>Min and max range for the slider</td>
+    </tr>
+    <tr>
+      <td>step</td>
+      <td>number</td>
+      <td>0</td>
+      <td>Step to use when pressing left/right on the slider</td>
+    </tr>
+    <tr>
+      <td>position</td>
+      <td>number/string</td>
+      <td>""</td>
+      <td>Default position when first creating the control. It must be within the range. If it’s a string then it’s <code class="highlighter-rouge">call compile</code>'d and must return the position number</td>
+    </tr>
+    <tr>
+      <td>expression</td>
+      <td>string</td>
+      <td>""</td>
+      <td>Code to run when the user presses the final OK button. It will only run if the position of the control changes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="events-1">Events</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>onSliderPosChanged</td>
+      <td>Fires when changing the position of the slider.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="examples-1">Examples</h3>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Overcast</span> <span class="p">{</span>
+    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">"SLIDER"</span><span class="p">;</span>
+    <span class="n">range</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+    <span class="n">position</span> <span class="o">=</span> <span class="s">"overcast"</span><span class="p">;</span>
+    <span class="n">expression</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+    <span class="n">onSliderPosChanged</span> <span class="o">=</span> <span class="n">QUOTE</span><span class="p">(</span>\
+        <span class="n">_ctrl</span> <span class="o">=</span> <span class="n">_this</span> <span class="n">select</span> <span class="mi">0</span><span class="p">;</span>\
+        <span class="n">_ctrl</span> <span class="n">ctrlSetTooltip</span> <span class="n">str</span> <span class="p">(</span><span class="n">sliderPosition</span> <span class="n">_ctrl</span><span class="p">);</span>\
+    <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Range</span> <span class="p">{</span>
+    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">"SLIDER"</span><span class="p">;</span>
+    <span class="n">range</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">};</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="n">position</span> <span class="o">=</span> <span class="mi">500</span><span class="p">;</span>
+    <span class="n">expression</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+    <span class="n">onSliderPosChanged</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<h2 id="edit">Edit</h2>
+
+<h3 class="no-margin" id="properties-2">Properties</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>condition</td>
+      <td>string</td>
+      <td>"true"</td>
+      <td>Condition that must return true to show the control. Arguments passed to the condition are <code class="highlighter-rouge">[selection&lt;ARRAY&gt;]</code></td>
+    </tr>
+    <tr>
+      <td>rows</td>
+      <td>number</td>
+      <td>0</td>
+      <td>Number of rows to draw (more than 1 will result in a multi-line edit box)</td>
+    </tr>
+    <tr>
+      <td>textPlain</td>
+      <td>string</td>
+      <td>""</td>
+      <td>Text value to be placed into the edit box</td>
+    </tr>
+    <tr>
+      <td>textCode</td>
+      <td>string</td>
+      <td>""</td>
+      <td>Code that returns the text value to be placed into the edit box</td>
+    </tr>
+    <tr>
+      <td>expression</td>
+      <td>string</td>
+      <td>""</td>
+      <td>Code to run when the user presses the final OK button. It will only run if the value of the control changes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="events-2">Events</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>onSetFocus</td>
+      <td>Input focus is on control. It now begins to accept keyboard input.</td>
+    </tr>
+    <tr>
+      <td>onKillFocus</td>
+      <td>Input focus is no longer on control. It no longer accepts keyboard input.</td>
+    </tr>
+    <tr>
+      <td>onKeyDown</td>
+      <td>Pressing any keyboard key. Fired before the onKeyUp event.</td>
+    </tr>
+    <tr>
+      <td>onKeyUp</td>
+      <td>Releasing any keyboard key. Fired after the onKeyDown event.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="examples-2">Examples</h3>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Summary</span> <span class="p">{</span>
+    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">"EDIT"</span><span class="p">;</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">textPlain</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+    <span class="n">expression</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Name</span> <span class="p">{</span>
+    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">"EDIT"</span><span class="p">;</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">textCode</span> <span class="o">=</span> <span class="s">"name player"</span><span class="p">;</span>
+    <span class="n">expression</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<h2 id="date">Date</h2>
+
+<h3 class="no-margin" id="properties-3">Properties</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>condition</td>
+      <td>string</td>
+      <td>"true"</td>
+      <td>Condition that must return true to show the control. Arguments passed to the condition are <code class="highlighter-rouge">[selection&lt;ARRAY&gt;]</code></td>
+    </tr>
+    <tr>
+      <td>year</td>
+      <td>number/string</td>
+      <td>0</td>
+      <td>Default year value. If code string, it must return a number</td>
+    </tr>
+    <tr>
+      <td>month</td>
+      <td>number/string</td>
+      <td>0</td>
+      <td>Default month value. If code string, it must return a number</td>
+    </tr>
+    <tr>
+      <td>day</td>
+      <td>number/string</td>
+      <td>0</td>
+      <td>Default day value. If code string, it must return a number</td>
+    </tr>
+    <tr>
+      <td>expression</td>
+      <td>string</td>
+      <td>""</td>
+      <td>Code to run when the user presses the final OK button. It will only run if the value of the control changes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="events-3">Events</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>onLBSelChanged</td>
+      <td>Fires when the selection in the combo box has changed. The left mouse button has been released and the new selection is fully made.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="examples-3">Examples</h3>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Date</span> <span class="p">{</span>
+    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">"DATE"</span><span class="p">;</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="s">"date select 0"</span><span class="p">;</span>
+    <span class="n">month</span> <span class="o">=</span> <span class="s">"date select 1"</span><span class="p">;</span>
+    <span class="n">day</span> <span class="o">=</span> <span class="s">"date select 2"</span><span class="p">;</span>
+    <span class="n">expression</span> <span class="o">=</span> <span class="n">QFUNC</span><span class="p">(</span><span class="n">setDateTime</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">FixedDate</span> <span class="p">{</span>
+    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">"DATE"</span><span class="p">;</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="mi">1945</span><span class="p">;</span>
+    <span class="n">month</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="n">day</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="n">expression</span> <span class="o">=</span> <span class="n">QFUNC</span><span class="p">(</span><span class="n">setDateTime</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+</div>
+
+<script>
+    $(document).ready(function(e) {
+        var $toc = $("#toc");
+        if ($toc.length > 0) {
+            $toc.toc({
+                headers: "#content h1, #content h2, #content h3, #content h4, #content h5, #content h6",
+                showEffect: "none"
+            });
+
+            if ($toc.html() === "") {
+                $(".js-expandToc").remove();
+                $(".toc-header").remove();
+            }
+        }
+    });
+</script>
+
+            </div>
+
+            <footer></footer>
+        </main>
+
+        
+
+    </body>
+</html>
