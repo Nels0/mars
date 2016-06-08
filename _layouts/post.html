@@ -3,17 +3,13 @@ layout: default
 ---
 
 <article class="post">
-    <h1>{{ page.title }}</h1>
+    <h1 class="p-title">{{ page.title }}</h1>
 
-    <div class="date">
-        Written on {{ page.date | date: "%B %e, %Y" }}{% if page.author %} by <a href="{{ page.authorUrl }}">{{ page.author }}</a>{% endif %}
+    <div class="date p-date">
+        Published on {{ page.date | date: "%B %e, %Y" }}{% if page.author %} by <a href="{{ page.authorUrl }}">{{ page.author }}</a>{% endif %}
     </div>
-    
-    <div style="margin:10px 0;"></div>
 
-    <div class="entry">
+    <div class="entry p-content">
         {{ content }}
     </div>
-
-    {% include disqus.html %}
 </article>

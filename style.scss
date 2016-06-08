@@ -389,16 +389,26 @@ nav {
 }
 
 .posts > .post {
-    padding-bottom: 2em;
-    border-bottom: 1px solid $lightGray;
+    padding-bottom: 50px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid #DDD;
+    float: left;
+    width: 100%;
 }
 
 .posts > .post:last-child {
-    padding-bottom: 1em;
+    margin-bottom: 0;
     border-bottom: none;
 }
 
 .post {
+    .date {
+        float: left;
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
     blockquote {
         margin: 1.8em .8em;
         border-left: 2px solid $gray;
@@ -414,8 +424,58 @@ nav {
 
     .read-more {
         text-transform: uppercase;
-        font-size: 15px;
+        font-size: 14px;
     }
+
+    h1 {
+        margin: 0;
+        float: left;
+        width: 100%;
+        font-size: 28px;
+        font-weight: 100;
+        text-decoration: none !important;
+
+        a {
+            text-decoration: none !important;
+        }
+    }
+
+    .entry {
+        float: left;
+        width: 100%;
+        margin: 0;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: justify;
+        color: #444;
+
+        p {
+            float: left;
+            width: 100%;
+            font-size: inherit;
+            line-height: inherit;
+            text-align: inherit;
+        }
+    }
+}
+
+.p-title {
+	font-size: 36px !important;
+	font-weight: 600 !important;
+}
+
+.p-date {
+	font-size: 18px !important;
+}
+
+.p-content {
+	font-size: 17px !important;
+	line-height: 36px !important;
+	margin-top: 10px !important;
+}
+
+.p-content p {
+	margin-bottom: 50px;
 }
 
 .wrapper-footer {
@@ -583,7 +643,7 @@ footer {
 	left: 0;
 	width: 100%;
 	top: 1000px;
-    padding: 25px 0;
+    padding: 45px 0;
 
     .contrast-inner {
         max-width: 1000px;
@@ -597,8 +657,8 @@ footer {
 	background: #FFF;
 	left: 0;
 	width: 100%;
-	top: 2030px;
-	padding: 200px 0;
+	top: 1995px;
+	padding: 250px 0;
 	text-align: center;
 }
 
