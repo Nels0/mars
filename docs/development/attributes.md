@@ -67,20 +67,20 @@ class GVARMAIN(attributes) {
                                     identifier = "GroupList";
                                     type = "COMBO";
                                     labels = QUOTE(\
-										(allGroups select {\
-											{!isPlayer _x} count (units _x) == 0\
-										}) apply {format [ARR_3('%1 (%2)', groupID _x, name leader _x)]}\
-									);
-									values = QUOTE(\
-										(allGroups select {\
-											{!isPlayer _x} count (units _x) == 0\
-										}) apply {getPlayerUID (leader _x)}\
-									);
+                                        (allGroups select {\
+                                            {!isPlayer _x} count (units _x) == 0\
+                                        }) apply {format [ARR_3('%1 (%2)', groupID _x, name leader _x)]}\
+                                    );
+                                    values = QUOTE(\
+                                        (allGroups select {\
+                                            {!isPlayer _x} count (units _x) == 0\
+                                        }) apply {getPlayerUID (leader _x)}\
+                                    );
                                     selected = QUOTE(getPlayerUID (leader player));
                                     expression = "";
                                 };
-							};
-						};
+                            };
+                        };
                         class Name {
                             displayName = "Name";
                             tooltipText = "The name of the group appears on its map marker.";
@@ -96,13 +96,13 @@ class GVARMAIN(attributes) {
                                     );
                                     expression = "";
                                 };
-							};
-						};
-					};
-				};
-			};
-		};
-	};
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    };
 };
 ```
 
@@ -211,62 +211,62 @@ class Years {
 {: .no-margin}
 
 <table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Type</th>
-			<th>Default</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>condition</td>
-			<td>string</td>
-			<td>"true"</td>
-			<td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
-		</tr>
-		<tr>
-			<td>range</td>
-			<td>array</td>
-			<td>[]</td>
-			<td>Min and max range for the slider</td>
-		</tr>
-		<tr>
-			<td>step</td>
-			<td>number</td>
-			<td>0</td>
-			<td>Step to use when pressing left/right on the slider</td>
-		</tr>
-		<tr>
-			<td>position</td>
-			<td>number/string</td>
-			<td>""</td>
-			<td>Default position when first creating the control. It must be within the range. If it’s a string then it’s <code>call compile</code>'d and must return the position number</td>
-		</tr>
-		<tr>
-			<td>expression</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Code to run when the user presses the final OK button. It will only run if the position of the control changes</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>condition</td>
+            <td>string</td>
+            <td>"true"</td>
+            <td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
+        </tr>
+        <tr>
+            <td>range</td>
+            <td>array</td>
+            <td>[]</td>
+            <td>Min and max range for the slider</td>
+        </tr>
+        <tr>
+            <td>step</td>
+            <td>number</td>
+            <td>0</td>
+            <td>Step to use when pressing left/right on the slider</td>
+        </tr>
+        <tr>
+            <td>position</td>
+            <td>number/string</td>
+            <td>""</td>
+            <td>Default position when first creating the control. It must be within the range. If it’s a string then it’s <code>call compile</code>'d and must return the position number</td>
+        </tr>
+        <tr>
+            <td>expression</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code to run when the user presses the final OK button. It will only run if the position of the control changes</td>
+        </tr>
+    </tbody>
 </table>
 
 ### Events
 <table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>onSliderPosChanged</td>
-			<td>Fires when changing the position of the slider.</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>onSliderPosChanged</td>
+            <td>Fires when changing the position of the slider.</td>
+        </tr>
+    </tbody>
 </table>
 
 ### Examples
@@ -301,74 +301,74 @@ class Range {
 {: .no-margin}
 
 <table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Type</th>
-			<th>Default</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>condition</td>
-			<td>string</td>
-			<td>"true"</td>
-			<td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
-		</tr>
-		<tr>
-			<td>rows</td>
-			<td>number</td>
-			<td>0</td>
-			<td>Number of rows to draw (more than 1 will result in a multi-line edit box)</td>
-		</tr>
-		<tr>
-			<td>textPlain</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Text value to be placed into the edit box</td>
-		</tr>
-		<tr>
-			<td>textCode</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Code that returns the text value to be placed into the edit box</td>
-		</tr>
-		<tr>
-			<td>expression</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Code to run when the user presses the final OK button. It will only run if the value of the control changes</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>condition</td>
+            <td>string</td>
+            <td>"true"</td>
+            <td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
+        </tr>
+        <tr>
+            <td>rows</td>
+            <td>number</td>
+            <td>0</td>
+            <td>Number of rows to draw (more than 1 will result in a multi-line edit box)</td>
+        </tr>
+        <tr>
+            <td>textPlain</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Text value to be placed into the edit box</td>
+        </tr>
+        <tr>
+            <td>textCode</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code that returns the text value to be placed into the edit box</td>
+        </tr>
+        <tr>
+            <td>expression</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code to run when the user presses the final OK button. It will only run if the value of the control changes</td>
+        </tr>
+    </tbody>
 </table>
 
 ### Events
 <table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>onSetFocus</td>
-			<td>Input focus is on control. It now begins to accept keyboard input.</td>
-		</tr>
-		<tr>
-			<td>onKillFocus</td>
-			<td>Input focus is no longer on control. It no longer accepts keyboard input.</td>
-		</tr>
-		<tr>
-			<td>onKeyDown</td>
-			<td>Pressing any keyboard key. Fired before the onKeyUp event.</td>
-		</tr>
-		<tr>
-			<td>onKeyUp</td>
-			<td>Releasing any keyboard key. Fired after the onKeyDown event.</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>onSetFocus</td>
+            <td>Input focus is on control. It now begins to accept keyboard input.</td>
+        </tr>
+        <tr>
+            <td>onKillFocus</td>
+            <td>Input focus is no longer on control. It no longer accepts keyboard input.</td>
+        </tr>
+        <tr>
+            <td>onKeyDown</td>
+            <td>Pressing any keyboard key. Fired before the onKeyUp event.</td>
+        </tr>
+        <tr>
+            <td>onKeyUp</td>
+            <td>Releasing any keyboard key. Fired after the onKeyDown event.</td>
+        </tr>
+    </tbody>
 </table>
 
 ### Examples
@@ -396,62 +396,62 @@ class Name {
 {: .no-margin}
 
 <table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Type</th>
-			<th>Default</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>condition</td>
-			<td>string</td>
-			<td>"true"</td>
-			<td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
-		</tr>
-		<tr>
-			<td>year</td>
-			<td>number/string</td>
-			<td>0</td>
-			<td>Default year value. If code string, it must return a number</td>
-		</tr>
-		<tr>
-			<td>month</td>
-			<td>number/string</td>
-			<td>0</td>
-			<td>Default month value. If code string, it must return a number</td>
-		</tr>
-		<tr>
-			<td>day</td>
-			<td>number/string</td>
-			<td>0</td>
-			<td>Default day value. If code string, it must return a number</td>
-		</tr>
-		<tr>
-			<td>expression</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Code to run when the user presses the final OK button. It will only run if the value of the control changes</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>condition</td>
+            <td>string</td>
+            <td>"true"</td>
+            <td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
+        </tr>
+        <tr>
+            <td>year</td>
+            <td>number/string</td>
+            <td>0</td>
+            <td>Default year value. If code string, it must return a number</td>
+        </tr>
+        <tr>
+            <td>month</td>
+            <td>number/string</td>
+            <td>0</td>
+            <td>Default month value. If code string, it must return a number</td>
+        </tr>
+        <tr>
+            <td>day</td>
+            <td>number/string</td>
+            <td>0</td>
+            <td>Default day value. If code string, it must return a number</td>
+        </tr>
+        <tr>
+            <td>expression</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code to run when the user presses the final OK button. It will only run if the value of the control changes</td>
+        </tr>
+    </tbody>
 </table>
 
 ### Events
 <table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>onLBSelChanged</td>
-			<td>Fires when the selection in the combo box has changed. The left mouse button has been released and the new selection is fully made.</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>onLBSelChanged</td>
+            <td>Fires when the selection in the combo box has changed. The left mouse button has been released and the new selection is fully made.</td>
+        </tr>
+    </tbody>
 </table>
 
 ### Examples
@@ -481,40 +481,40 @@ class FixedDate {
 {: .no-margin}
 
 <table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Type</th>
-			<th>Default</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>condition</td>
-			<td>string</td>
-			<td>"true"</td>
-			<td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
-		</tr>
-		<tr>
-			<td>textPlain</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Text to show on the button</td>
-		</tr>
-		<tr>
-			<td>textCode</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Code that returns the text to show on the button</td>
-		</tr>
-		<tr>
-			<td>action</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Code to run when pressing button</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>condition</td>
+            <td>string</td>
+            <td>"true"</td>
+            <td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
+        </tr>
+        <tr>
+            <td>textPlain</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Text to show on the button</td>
+        </tr>
+        <tr>
+            <td>textCode</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code that returns the text to show on the button</td>
+        </tr>
+        <tr>
+            <td>action</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code to run when pressing button</td>
+        </tr>
+    </tbody>
 </table>
 
 ### Examples
@@ -533,34 +533,34 @@ class Button {
 {: .no-margin}
 
 <table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Type</th>
-			<th>Default</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>condition</td>
-			<td>string</td>
-			<td>"true"</td>
-			<td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
-		</tr>
-		<tr>
-			<td>textPlain</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Text to show on the label</td>
-		</tr>
-		<tr>
-			<td>textCode</td>
-			<td>string</td>
-			<td>""</td>
-			<td>Code that returns the text to show on the label</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>condition</td>
+            <td>string</td>
+            <td>"true"</td>
+            <td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
+        </tr>
+        <tr>
+            <td>textPlain</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Text to show on the label</td>
+        </tr>
+        <tr>
+            <td>textCode</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code that returns the text to show on the label</td>
+        </tr>
+    </tbody>
 </table>
 
 ### Examples
