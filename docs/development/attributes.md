@@ -16,6 +16,7 @@ A consistent UI design throughout Mars is a main priority and in order to achiev
 2. Place the following config in the file
 3. Include `CfgAttributes.hpp` in your `config.cpp` **after** the `script_component.hpp` include
 4. Go through the various control types available in the sidebar
+5. When you're ready to use your attributes class, just call it using `[QUOTE(ADDON), "YourAttributeName"] call mars_attributes_fnc_openAttributes`
 
 ```c++
 class GVARMAIN(attributes) {
@@ -43,6 +44,76 @@ class GVARMAIN(attributes) {
 ```
 
 A more fuller example can be found [here](https://github.com/jameslkingsley/Mars/blob/master/addons/environment/CfgAttributes.hpp).
+
+# Identifiers
+Identifiers will allow you to return a control from another part of your attribute config. An example usage would be to have a combo box populated with all groups in the mission, and then an edit box with the group ID of the selected group. When you change the combo box, ideally you want it to change the value of the edit box. See below for an example.
+
+```c++
+class GVARMAIN(attributes) {
+    class ADDON {
+        class groups {
+            displayName = "Group Management";
+            actionConfirm = "";
+            actionCancel = "";
+            class AttributeCategories {
+                class Basics {
+                    class AttributeItems {
+                        class Select {
+                            displayName = "Group";
+                            tooltipText = "Select the group to edit.";
+                            class AttributeControls {
+                                class List {
+                                    condition = "true";
+                                    identifier = "GroupList";
+                                    type = "COMBO";
+                                    labels = QUOTE(\
+										(allGroups select {\
+											{!isPlayer _x} count (units _x) == 0\
+										}) apply {format [ARR_3('%1 (%2)', groupID _x, name leader _x)]}\
+									);
+									values = QUOTE(\
+										(allGroups select {\
+											{!isPlayer _x} count (units _x) == 0\
+										}) apply {getPlayerUID (leader _x)}\
+									);
+                                    selected = QUOTE(getPlayerUID (leader player));
+                                    expression = "";
+                                };
+							};
+						};
+                        class Name {
+                            displayName = "Name";
+                            tooltipText = "The name of the group appears on its map marker.";
+                            class AttributeControls {
+                                class Name {
+                                    condition = "true";
+                                    type = "EDIT";
+                                    textCode = QUOTE(\
+                                        private _groupCtrl = ['GroupList'] call mars_attributes_fnc_getControl;\
+                                        private _leaderUID = _groupCtrl lbData (lbCurSel _groupCtrl);\
+                                        private _group = (allGroups select {getPlayerUID (leader _x) == _leaderUID}) select 0;\
+                                        groupID _group\
+                                    );
+                                    expression = "";
+                                };
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+```
+
+# Window Size
+You can change the size of the overall window by simply providing another parameter to `openAttributes` such as `[QUOTE(ADDON), "YourAttributeName", [75, 50]] call mars_attributes_fnc_openAttributes`. The first element in the array is the width, the second is the height.
+
+# Label and field ratios
+You can change the ratio of the labels and fields by providing another parameter to `openAttributes` such as `[QUOTE(ADDON), "YourAttributeName", nil, [0.33, 0.66]] call mars_attributes_fnc_openAttributes`. The first element in the array is the scale of the label, the second element is the scale of the field.
+
+# Storing attributes in the mission config
+You can also create attribute configs straight into the mission by placing the config in the `description.ext`. The attributes framework will first search for the given config in the main `configFile` and lastly check `missionConfigFile`.
 
 # Controls
 
