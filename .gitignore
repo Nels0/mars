@@ -20,5 +20,6 @@ CNAME
 tools/temp
 
 *.cache
+*.pbo
 
 tools
