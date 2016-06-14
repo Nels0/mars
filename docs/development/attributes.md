@@ -45,7 +45,7 @@ class GVARMAIN(attributes) {
 
 A more fuller example can be found [here](https://github.com/jameslkingsley/Mars/blob/master/addons/environment/CfgAttributes.hpp).
 
-# Identifiers
+## Identifiers
 Identifiers will allow you to return a control from another part of your attribute config. An example usage would be to have a combo box populated with all groups in the mission, and then an edit box with the group ID of the selected group. When you change the combo box, ideally you want it to change the value of the edit box. See below for an example.
 
 ```c++
@@ -106,14 +106,46 @@ class GVARMAIN(attributes) {
 };
 ```
 
-# Window Size
+## Control values
+This only applies to the `actionConfirm` property. If you want the user to fill out a form with some data and then process it all at once in one place then you would call a function in `actionConfirm`. From there you can get the value of each control by doing the following:
+
+```c++
+class GVARMAIN(attributes) {
+    class ADDON {
+        class Example {
+            displayName = "Example";
+            actionConfirm = QUOTE(\
+                _myControl = [_this, 'MyCategory_MyItem_MyControl'] call mars_attributes_fnc_getControlValue;\
+                systemChat str _myControl;\
+            );
+            class AttributeCategories {
+                class MyCategory {
+                    class AttributeItems {
+                        class MyItem {
+                            class AttributeControls {
+                                class MyControl {};
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    };
+};
+```
+
+The string represents the control key (generated for every control) which is simply the category class name, item class name and control class name joined by underscores. This allows you to reorder your attribute config and not worry about parameter order.
+
+## Window Size
 You can change the size of the overall window by simply providing another parameter to `openAttributes` such as `[QUOTE(ADDON), "YourAttributeName", [75, 50]] call mars_attributes_fnc_openAttributes`. The first element in the array is the width, the second is the height.
 
-# Label and field ratios
+## Label and field ratios
 You can change the ratio of the labels and fields by providing another parameter to `openAttributes` such as `[QUOTE(ADDON), "YourAttributeName", nil, [0.33, 0.66]] call mars_attributes_fnc_openAttributes`. The first element in the array is the scale of the label, the second element is the scale of the field.
 
-# Storing attributes in the mission config
+## Storing attributes in the mission config
 You can also create attribute configs straight into the mission by placing the config in the `description.ext`. The attributes framework will first search for the given config in the main `configFile` and lastly check `missionConfigFile`.
+
+***
 
 # Controls
 
@@ -121,7 +153,7 @@ You can also create attribute configs straight into the mission by placing the c
 
 ## Combo
 
-### Properties
+#### Properties
 {: .no-margin}
 
 <table>
@@ -167,7 +199,7 @@ You can also create attribute configs straight into the mission by placing the c
     </tbody>
 </table>
 
-### Events
+#### Events
 <table>
     <thead>
         <tr>
@@ -183,7 +215,7 @@ You can also create attribute configs straight into the mission by placing the c
     </tbody>
 </table>
 
-### Examples
+#### Examples
 ```c++
 class Range {
     condition = "true";
@@ -207,7 +239,7 @@ class Years {
 
 ## Slider
 
-### Properties
+#### Properties
 {: .no-margin}
 
 <table>
@@ -253,7 +285,7 @@ class Years {
     </tbody>
 </table>
 
-### Events
+#### Events
 <table>
     <thead>
         <tr>
@@ -269,7 +301,7 @@ class Years {
     </tbody>
 </table>
 
-### Examples
+#### Examples
 ```c++
 class Overcast {
     condition = "true";
@@ -297,7 +329,7 @@ class Range {
 
 ## Edit
 
-### Properties
+#### Properties
 {: .no-margin}
 
 <table>
@@ -343,7 +375,7 @@ class Range {
     </tbody>
 </table>
 
-### Events
+#### Events
 <table>
     <thead>
         <tr>
@@ -371,7 +403,7 @@ class Range {
     </tbody>
 </table>
 
-### Examples
+#### Examples
 ```c++
 class Summary {
     condition = "true";
@@ -392,7 +424,7 @@ class Name {
 
 ## Date
 
-### Properties
+#### Properties
 {: .no-margin}
 
 <table>
@@ -438,7 +470,7 @@ class Name {
     </tbody>
 </table>
 
-### Events
+#### Events
 <table>
     <thead>
         <tr>
@@ -454,7 +486,7 @@ class Name {
     </tbody>
 </table>
 
-### Examples
+#### Examples
 ```c++
 class Date {
     condition = "true";
@@ -477,7 +509,7 @@ class FixedDate {
 
 ## Button
 
-### Properties
+#### Properties
 {: .no-margin}
 
 <table>
@@ -517,7 +549,7 @@ class FixedDate {
     </tbody>
 </table>
 
-### Examples
+#### Examples
 ```c++
 class Button {
     condition = "alive player";
@@ -529,7 +561,7 @@ class Button {
 
 ## Label
 
-### Properties
+#### Properties
 {: .no-margin}
 
 <table>
@@ -563,11 +595,178 @@ class Button {
     </tbody>
 </table>
 
-### Examples
+#### Examples
 ```c++
 class Label {
     condition = "true";
     type = "LABEL";
     textPlain = "This is some text!";
+};
+```
+
+## Checkbox
+
+#### Properties
+{: .no-margin}
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>condition</td>
+            <td>string</td>
+            <td>"true"</td>
+            <td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
+        </tr>
+        <tr>
+            <td>textPlain</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Text to show on the checkbox's label</td>
+        </tr>
+        <tr>
+            <td>textCode</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code that returns the text to show on the checkbox's label</td>
+        </tr>
+        <tr>
+            <td>checked</td>
+            <td>bool/string</td>
+            <td>false</td>
+            <td>Whether the checkbox should already be checked. If a string is provided instead of a bool, it will be compiled and must return a boolean value</td>
+        </tr>
+        <tr>
+            <td>expression</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code to run when the user presses the final OK button. It will only run if the value of the control changes</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Examples
+```c++
+class Checkbox1 {
+    condition = "true";
+    type = "CHECKBOX";
+    textPlain = "Enable/Disable Something";
+    checked = false;
+};
+
+class Checkbox2 {
+    condition = "true";
+    type = "CHECKBOX";
+    textCode = "name player";
+    checked = "alive player";
+};
+```
+
+## Vector
+
+#### Properties
+{: .no-margin}
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>condition</td>
+            <td>string</td>
+            <td>"true"</td>
+            <td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
+        </tr>
+        <tr>
+            <td>value</td>
+            <td>array/string</td>
+            <td>[]</td>
+            <td>Array containing three numeric values for the vector (X, Y, Z). If string is provided, it will be compiled and must return an array</td>
+        </tr>
+        <tr>
+            <td>expression</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code to run when the user presses the final OK button. It will only run if the value of the control changes</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Examples
+```c++
+class Vector1 {
+    condition = "true";
+    type = "VECTOR";
+    value[] = {0, 0, 0};
+};
+
+class Vector2 {
+    condition = "true";
+    type = "VECTOR";
+    value = "getPos player";
+};
+```
+
+## Map
+
+#### Properties
+{: .no-margin}
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>condition</td>
+            <td>string</td>
+            <td>"true"</td>
+            <td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
+        </tr>
+        <tr>
+            <td>position</td>
+            <td>array/string</td>
+            <td>[]</td>
+            <td>Position array to center the map control on. If string is provided, it will be compiled and must return a position array</td>
+        </tr>
+        <tr>
+            <td>expression</td>
+            <td>string</td>
+            <td>""</td>
+            <td>Code to run when the user presses the final OK button. It will only run if the designated position of the map control changes (user clicks a position on the map)</td>
+        </tr>
+    </tbody>
+</table>
+
+#### Examples
+```c++
+class Map1 {
+    condition = "true";
+    type = "MAP";
+    position[] = {0, 0, 0};
+};
+
+class Map2 {
+    condition = "true";
+    type = "MAP";
+    position = "getPos player";
 };
 ```

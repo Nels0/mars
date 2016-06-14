@@ -6,7 +6,16 @@
 }
 
 code {
-    font-family:'Bitstream Vera Sans Mono','Courier', monospace;
+    font-family: 'Source Code Pro';
+    background: #EEE;
+	padding: 0 5px;
+    font-size: 12px;
+	font-weight: 500;
+}
+
+pre code {
+	background: none !important;
+	padding: 0 !important;
 }
 
 .highlight .c { color: #586E75 } /* Comment */
