@@ -673,6 +673,7 @@ footer {
 	background: #bd2c2c;
 	color: #FFF;
 	padding: 15px 30px;
+    transition: all .15s ease;
 
     &:hover {
         color: #FFF;
@@ -746,7 +747,7 @@ main.main-wide {
 }
 
 .panel-dark {
-    background: $black;
+    background: linear-gradient(#000, $black);
 }
 
 .panel-box-4 {
@@ -927,6 +928,26 @@ $slideDownEnd: 0;
 @keyframes fadein {
     from { transform: scale($scaleStart, $scaleStart); opacity: 0; }
     to   { transform: scale($scaleEnd, $scaleEnd); opacity: 1; }
+}
+
+.link-light {
+    color: #888 !important;
+}
+
+.panel-footer {
+    min-height: 0;
+}
+
+.panel-footer .panel-inner {
+    padding: 50px 50px 60px 50px !important;
+}
+
+.bis {
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+    float: left;
+    width: 100%;
 }
 
 @import "highlights";
