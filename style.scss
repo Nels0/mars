@@ -58,13 +58,13 @@ header {
             background-image: url(https://raw.githubusercontent.com/jameslkingsley/Mars/master/extras/logo/logo_text_red_sq.png);
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 124px;
+            background-size: 13.4vmin;
             width: 50%;
             margin: 0 auto;
             float: left;
 
             .mars-version {
-                font-size: 12px;
+                font-size: 1.2vmin;
                 float: left;
                 width: 100%;
                 text-align: center;
@@ -78,7 +78,7 @@ header {
         a {
             float: left;
             margin-top: 0;
-            font-size: 24px;
+            font-size: 2.4vmin;
             text-decoration: none !important;
             color: rgba(0,0,0,0.25);
             padding: 0 5px;
@@ -104,7 +104,7 @@ header {
         
         .nav_link {
             float: right !important;
-            font-size: 16px !important;
+            font-size: 1.6vmin !important;
             margin: 0 !important;
             padding: 0 10px !important;
             transition: all .15s ease;
@@ -667,7 +667,7 @@ footer {
 }
 
 .button-big {
-    font-size: 28px;
+    font-size: 2.8vmin;
 	font-weight: 100;
 	text-decoration: none !important;
 	background: #bd2c2c;
@@ -854,7 +854,7 @@ h1.invert {
     background-image: url(images/sword.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     transform: rotate(180deg);
     margin-top: 150px;
     pointer-events: none;
@@ -932,6 +932,7 @@ $slideDownEnd: 0;
 
 .link-light {
     color: #888 !important;
+    font-size: 1.4vmin;
 }
 
 .panel-footer {
@@ -944,10 +945,30 @@ $slideDownEnd: 0;
 
 .bis {
     color: #888;
-    font-size: 14px;
+    font-size: 1.4vmin;
     text-align: center;
     float: left;
     width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .sword-accent {
+        height: 512px;
+    }
+    
+    .panel-box-4 {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 5vh;
+    }
+    
+    .panel-inner {
+        padding: 10vh 50px;
+    }
+    
+    .panel-footnote {
+        margin-bottom: 100px;
+    }
 }
 
 @import "highlights";
