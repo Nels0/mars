@@ -1,7 +1,7 @@
 ---
 ---
 
-@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700';
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,200,300,500,600,700,900);
 @import "reset";
 @import "variables";
@@ -12,7 +12,7 @@ html {
 
 body {
     background: $white;
-    font: 14px/1.4 $lora;
+    font: 14px/1.4 $font;
     color: $darkGray;
 }
 
@@ -80,10 +80,11 @@ header {
             margin-top: 0;
             font-size: 24px;
             text-decoration: none !important;
-            color: #1b1b1b;
+            color: rgba(0,0,0,0.25);
             padding: 0 5px;
             height: 100%;
             line-height: 100px;
+            transition: all .15s ease;
 
             &:hover {
                 color: #bd2c2c;
@@ -107,6 +108,7 @@ header {
             margin: 0 !important;
             padding: 0 10px !important;
             transition: all .15s ease;
+            color: rgba(0,0,0,0.5);
         }
     }
     
@@ -137,7 +139,6 @@ main {
     height: 100%;
     z-index: -1;
     padding: 0 25px;
-    pointer-events: none;
     
     .inner {
         max-width: 1000px;
@@ -164,8 +165,8 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: $darkerGray;
-    font-weight: bold;
+    color: #000;
+    font-weight: 400;
     line-height: 1.7;
     margin: 25px 0 0 0;
     padding: 0;
@@ -176,10 +177,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .docs_title {
-	font-size: 36px;
-	font-weight: 600;
+	font-size: 38px;
+	font-weight: 400;
 	color: $darkerGray;
-	margin: 25px 0 0 0;
+	margin: 25px 0 -10px 0;
 	display: block;
 }
 
@@ -190,17 +191,19 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 25px;
 
     .c_title {
-        font-size: 22px;
+        font-size: 18px;
         float: left;
         width: 100%;
         color: #bd2c2c;
+        font-weight: 400;
     }
 
     .c_summary {
         float: left;
         width: 100%;
-        font-size: 16px;
-        line-height: 28px;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 300;
     }
 }
 
@@ -230,12 +233,12 @@ p {
 }
 
 a {
-    color: $blue;
+    color: $red;
     text-decoration: none;
     cursor: pointer;
     
     &:hover, &:active {
-        color: $blue;
+        color: $red;
         text-decoration: underline;
     }
 }
@@ -345,7 +348,7 @@ img {
     margin: 0;
     color: $darkGray;
     cursor: pointer;
-    font-family: $helveticaNeue;
+    font-family: $font;
     font-weight: 300;
     font-size: 28px;
     letter-spacing: 1px;
@@ -364,7 +367,7 @@ img {
 nav {
     float: right;
     margin-top: 23px;
-    font-family: $helveticaNeue;
+    font-family: $font;
     font-size: 18px;
 
     @include mobile {
@@ -383,7 +386,7 @@ nav {
 
         @include mobile {
             margin: 0 10px;
-            color: $blue;
+            color: $red;
         }
     }
 }
@@ -500,13 +503,14 @@ nav {
 	font-size: 22px;
 	float: left;
 	width: 100%;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .docsh_desc {
 	font-size: 16px;
 	float: left;
 	width: 100%;
+    font-weight: 300;
 }
 
 #toc ol li {
@@ -522,7 +526,7 @@ li {
 }
 
 .docsh_content li a {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 footer {
@@ -533,7 +537,7 @@ footer {
 .toc_wrapper {
 	float: right;
 	width: 25%;
-	padding-left: 15px;
+	padding-left: 30px;
 
     .toc_title {
         font-size: 18px;
@@ -690,6 +694,239 @@ hr {
 	height: 1px;
 	background: linear-gradient(to right, rgba(255,255,255,0) 0%, #CCC 50%, rgba(255,255,255,0) 100%);
 	border: none;
+}
+
+main.main-wide {
+	padding: 0;
+    height: calc(100% - 100px)
+}
+
+.inner-wide {
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+
+.panel {
+	float: left;
+	width: 100%;
+	min-height: 100vh;
+    height: auto;
+
+    .panel-inner {
+        max-width: 1000px;
+        display: block;
+        margin: 0 auto;
+        padding: 100px 50px;
+
+        h1 {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.panel-first {
+    height: 100% !important;
+}
+
+.panel-odd {
+    background: #FFF;
+}
+
+.panel-even {
+    background: #F2F2F2;
+}
+
+.panel-red {
+    background: $red;
+}
+
+.panel-dark {
+    background: $black;
+}
+
+.panel-box-4 {
+    float: left;
+    width: calc(50% - 150px);
+    margin-right: 300px;
+    margin-bottom: 100px;
+}
+
+.panel-box-4:nth-of-type(2n) {
+    margin-right: 0;
+}
+
+.panel-box-4 h1 {
+    font-size: 26px;
+    font-weight: 300;
+    color: #444;
+    text-align: center;
+}
+
+.panel-box-4 p {
+    font-size: 16px;
+    color: #666;
+    line-height: 32px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.panel-footnote {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.panel-footnote a {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.panel-cbox-wide {
+    float: left;
+    width: 100%;
+    margin-bottom: 75px;
+}
+
+.panel-cbox-wide h1 {
+    font-size: 26px;
+    font-weight: 300;
+    color: #444;
+}
+
+.panel-cbox-wide p {
+    font-size: 16px;
+    color: #666;
+    line-height: 32px;
+    font-weight: 300;
+}
+
+.panel-center {
+    text-align: center;
+}
+
+.panel-vcenter {
+    padding: 39% 0;
+}
+
+.invert {
+    color: #CCC !important;
+}
+
+.invert a {
+    color: #FFF !important;
+    text-decoration: underline !important;
+}
+
+h1.invert {
+    color: #FFF !important;
+}
+
+#godlike-title {
+    text-align: center;
+    font-size: 2.2vmax;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 16px;
+    color: #444;
+    margin-top: 25px;
+}
+
+#godlike-tagline {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1vmax;
+    margin-top: 20px;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.sword-accent {
+    float: left;
+    width: 100%;
+    height: 1024px;
+    background-image: url(images/sword.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotate(180deg);
+    margin-top: 150px;
+    pointer-events: none;
+}
+
+$scaleDelay: 2s;
+$scaleStart: 0.95;
+$scaleEnd: 1;
+
+.scaleOnLoad-sword {
+    transform: scale($scaleEnd, $scaleEnd) rotate(180deg);
+    transform-origin: center;
+    opacity: 1;
+    animation: scaleOnLoad-sword $scaleDelay;
+}
+
+@keyframes scaleOnLoad-sword {
+    from { transform: scale($scaleStart, $scaleStart) rotate(180deg); opacity: 0; }
+    to   { transform: scale($scaleEnd, $scaleEnd) rotate(180deg); opacity: 1; }
+}
+
+.scaleOnLoad {
+    transform: scale($scaleEnd, $scaleEnd);
+    transform-origin: center;
+    opacity: 1;
+    animation: fadein $scaleDelay;
+}
+
+$slideUpDelay: 1s;
+$slideUpStart: 50px;
+$slideUpEnd: 0;
+
+.slideUp {
+    opacity: 0.5;
+    transform: translateY($slideUpStart);
+}
+
+.slideUp_anim {
+    transform: translateY($slideUpEnd);
+    transform-origin: center;
+    opacity: 1;
+    animation: slideUp $slideUpDelay;
+}
+
+@keyframes slideUp {
+    from { transform: translateY($slideUpStart); opacity: 0.5; }
+    to   { transform: translateY($slideUpEnd); opacity: 1; }
+}
+
+$slideDownDelay: 1s;
+$slideDownStart: -50px;
+$slideDownEnd: 0;
+
+.slideDown {
+    opacity: 0.5;
+    transform: translateY($slideDownStart);
+}
+
+.slideDown_anim {
+    transform: translateY($slideDownEnd);
+    transform-origin: center;
+    opacity: 1;
+    animation: slideDown $slideDownDelay;
+}
+
+@keyframes slideDown {
+    from { transform: translateY($slideDownStart); opacity: 0.5; }
+    to   { transform: translateY($slideDownEnd); opacity: 1; }
+}
+
+@keyframes fadein {
+    from { transform: scale($scaleStart, $scaleStart); opacity: 0; }
+    to   { transform: scale($scaleEnd, $scaleEnd); opacity: 1; }
 }
 
 @import "highlights";

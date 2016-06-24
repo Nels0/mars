@@ -3,17 +3,16 @@
 <html>
     <head>
         {% include meta.html %}
+        <script src="{{ site.url }}/js/jquery.waypoints.min.js"></script>
     </head>
 
-    <body>
+    <body class="body-wide">
         {% include header.html %}
         
-        <main>
-            <div class="inner">
+        <main class="main-wide">
+            <div class="inner-wide">
                 {{ content }}
             </div>
-
-            <footer></footer>
         </main>
 
         {% include analytics.html %}
