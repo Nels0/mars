@@ -674,6 +674,7 @@ footer {
 	color: #FFF;
 	padding: 15px 30px;
     transition: all .15s ease;
+    letter-spacing: 1px;
 
     &:hover {
         color: #FFF;
@@ -682,7 +683,7 @@ footer {
 }
 
 .button-disabled {
-    opacity: 0.5;
+    opacity: 0.66;
     background: #bd2c2c !important;
 	color: #FFF !important;
     cursor: default;
@@ -847,6 +848,13 @@ h1.invert {
     letter-spacing: 1px;
 }
 
+#godlike-download {
+    margin-top: 50px;
+    display: inline-block;
+    font-size: 2.4vmin;
+    letter-spacing: 1px;
+}
+
 .sword-accent {
     float: left;
     width: 100%;
@@ -856,13 +864,25 @@ h1.invert {
     background-repeat: no-repeat;
     background-size: contain;
     transform: rotate(180deg);
-    margin-top: 150px;
+    margin-top: 50px;
     pointer-events: none;
 }
 
 $scaleDelay: 2s;
 $scaleStart: 0.95;
 $scaleEnd: 1;
+
+.scaleOnLoad-disabled {
+    transform: scale($scaleEnd, $scaleEnd);
+    transform-origin: center;
+    opacity: 0.66;
+    animation: scaleOnLoad-disabled $scaleDelay;
+}
+
+@keyframes scaleOnLoad-disabled {
+    from { transform: scale($scaleStart, $scaleStart); opacity: 0; }
+    to   { transform: scale($scaleEnd, $scaleEnd); opacity: 0.66; }
+}
 
 .scaleOnLoad-sword {
     transform: scale($scaleEnd, $scaleEnd) rotate(180deg);
