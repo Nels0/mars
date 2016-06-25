@@ -1,8 +1,6 @@
 ---
 layout: docsPage
 title: Toolbar
-group: development
-order: 3
 ---
 
 # Overview

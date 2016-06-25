@@ -1,8 +1,7 @@
 ---
 layout: docsPage
 title: Setup
-group: development
-order: 1
+order: 0
 ---
 
 # Dependencies

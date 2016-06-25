@@ -1,8 +1,6 @@
 ---
 layout: docsPage
 title: Context Menus
-group: development
-order: 4
 ---
 
 # Overview

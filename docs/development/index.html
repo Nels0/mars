@@ -4,6 +4,4 @@ description: If you would like to build additional functionality into Mars, you'
 layout: docsHeaderPage
 ---
 
-{% assign pages_list = site.pages | sort: "order" %}
-{% assign group = 'development' %}
-{% include pages_list.html %}
+{% include tree.html context=page.url order="order" recursive=false %}

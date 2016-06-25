@@ -834,7 +834,7 @@ h1.invert {
     font-size: 2.2vmax;
     font-weight: 100;
     text-transform: uppercase;
-    letter-spacing: 16px;
+    letter-spacing: 14px;
     color: #444;
     margin-top: 25px;
 }
@@ -843,16 +843,17 @@ h1.invert {
     text-align: center;
     font-weight: 300;
     font-size: 1vmax;
-    margin-top: 20px;
+    margin-top: 0;
     color: #666;
-    letter-spacing: 1px;
+    letter-spacing: 0;
 }
 
 #godlike-download {
     margin-top: 50px;
     display: inline-block;
-    font-size: 2.4vmin;
+    font-size: 2.2vmin;
     letter-spacing: 1px;
+    padding: 10px 20px;
 }
 
 .sword-accent {
@@ -864,7 +865,7 @@ h1.invert {
     background-repeat: no-repeat;
     background-size: contain;
     transform: rotate(180deg);
-    margin-top: 50px;
+    margin-top: 0;
     pointer-events: none;
 }
 
@@ -989,6 +990,10 @@ $slideDownEnd: 0;
     .panel-footnote {
         margin-bottom: 100px;
     }
+}
+
+.docsh_content ul li {
+    list-style-type: upper-roman;
 }
 
 @import "highlights";

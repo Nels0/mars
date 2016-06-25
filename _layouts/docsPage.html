@@ -12,17 +12,9 @@ layout: default
 
 <script>
     $(document).ready(function(e) {
-        var $toc = $("#toc");
-        if ($toc.length > 0) {
-            $toc.toc({
-                headers: "#content h1, #content h2, #content h3",
-                showEffect: "none"
-            });
-
-            if ($toc.html() === "") {
-                $(".js-expandToc").remove();
-                $(".toc-header").remove();
-            }
-        }
+        $("#toc").toc({
+            headers: "#content h1, #content h2, #content h3, #content h4",
+            showEffect: "none"
+        });
     });
 </script>

@@ -1,8 +1,6 @@
 ---
 layout: docsPage
 title: Menu Strip
-group: development
-order: 2
 ---
 
 # Overview
