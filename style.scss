@@ -80,7 +80,7 @@ header {
             margin-top: 0;
             font-size: 2.4vmin;
             text-decoration: none !important;
-            color: rgba(0,0,0,0.25);
+            color: rgba(0,0,0,0.33);
             padding: 0 5px;
             height: 100%;
             line-height: 100px;
@@ -108,7 +108,7 @@ header {
             margin: 0 !important;
             padding: 0 10px !important;
             transition: all .15s ease;
-            color: rgba(0,0,0,0.5);
+            color: rgba(0,0,0,0.66);
         }
     }
     
@@ -408,8 +408,8 @@ nav {
     .date {
         float: left;
         width: 100%;
-        margin-bottom: 5px;
-        font-size: 16px;
+        margin: 0;
+        font-size: 12px;
     }
 
     blockquote {
@@ -434,23 +434,44 @@ nav {
         margin: 0;
         float: left;
         width: 100%;
-        font-size: 28px;
-        font-weight: 100;
+        font-size: 32px;
+        font-weight: 300;
         text-decoration: none !important;
+        line-height: 36px;
+        margin-bottom: 10px;
 
         a {
             text-decoration: none !important;
         }
     }
+    
+    h2 {
+        font-size: 26px;
+        font-weight: 300;
+    }
+    
+    h3 {
+        font-size: 22px;
+        font-weight: 300;
+    }
+    
+    h1.item {
+        font-size: 26px;
+        font-weight: 300;
+        text-decoration: none !important;
+        line-height: 36px;
+        margin-bottom: 5px;
+    }
 
     .entry {
         float: left;
         width: 100%;
-        margin: 0;
-        font-size: 16px;
-        line-height: 30px;
+        margin: 5px 0 0 0;
+        font-size: 14px;
+        line-height: 24px;
         text-align: justify;
         color: #444;
+        font-weight: 300;
 
         p {
             float: left;
@@ -462,23 +483,37 @@ nav {
     }
 }
 
+.item-date {
+    font-size: 14px !important;
+    font-style: italic;
+    margin-top: 0 !important;
+    float: left;
+    width: 100%;
+}
+
 .p-title {
-	font-size: 36px !important;
-	font-weight: 600 !important;
+	font-size: 44px !important;
+	font-weight: 300 !important;
+    color: #222 !important;
+    margin-bottom: 15px !important;
 }
 
 .p-date {
-	font-size: 18px !important;
+	font-size: 16px !important;
+    margin-bottom: 10px !important;
+    font-weight: 300;
 }
 
 .p-content {
-	font-size: 17px !important;
-	line-height: 36px !important;
+	font-size: 16px !important;
+	line-height: 32px !important;
+    font-weight: 300 !important;
+    color: #333 !important;
 	margin-top: 10px !important;
 }
 
 .p-content p {
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 
 .wrapper-footer {
