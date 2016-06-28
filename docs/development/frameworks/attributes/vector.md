@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: Vector
+description: Vector control containing three edit boxes (X, Y, Z).
 ---
 
 # Properties

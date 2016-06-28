@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: Map
+description: Map control that shows markers. Returns the selected position (3D).
 ---
 
 # Properties

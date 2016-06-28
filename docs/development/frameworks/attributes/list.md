@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: List
+description: List box containing labels and hidden values. Can also be a multi-select list.
 ---
 
 # Properties

@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: Checkbox
+description: Checkbox control containing a true/false boolean value.
 ---
 
 # Properties

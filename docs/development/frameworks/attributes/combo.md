@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: Combo
+description: Combo box control. Contains the label and value in the returned data.
 ---
 
 # Properties

@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: Label
+description: Label text. Can be given plain text or a code string that returns a string.
 ---
 
 # Properties

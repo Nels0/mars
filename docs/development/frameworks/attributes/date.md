@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: Date
+description: Date control (year, month, day). Shows full/half moons and also handles leap years.
 ---
 
 # Properties

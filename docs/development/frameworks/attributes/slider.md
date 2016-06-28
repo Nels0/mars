@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: Slider
+description: Slider control that returns the position within the given range.
 ---
 
 # Properties

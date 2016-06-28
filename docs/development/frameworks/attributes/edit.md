@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: Edit
+description: Edit text box control. Can have a custom number of rows (more than one turns it into a code box).
 ---
 
 # Properties

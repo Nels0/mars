@@ -1,6 +1,7 @@
 ---
 layout: docsPage
 title: Button
+description: A button control that can only be pressed (does not store a value).
 ---
 
 # Properties
