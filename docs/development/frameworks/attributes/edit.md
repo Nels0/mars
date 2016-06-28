@@ -19,7 +19,7 @@ title: Edit
             <td>condition</td>
             <td>string</td>
             <td>"true"</td>
-            <td>Condition that must return true to show the control. Arguments passed to the condition are <code>[selection&lt;ARRAY&gt;]</code></td>
+            <td>Condition that must return true to show the control.</td>
         </tr>
         <tr>
             <td>rows</td>
