@@ -65,7 +65,7 @@ description: Combo box control. Contains the label and value in the returned dat
     </tbody>
 </table>
 
-# Methods
+# Functions
 <table>
     <thead>
         <tr>
