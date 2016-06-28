@@ -65,6 +65,22 @@ description: Combo box control. Contains the label and value in the returned dat
     </tbody>
 </table>
 
+# Methods
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>update</td>
+            <td>Updates the labels and values. Will simply clear the combo box and re-run the population code again.</td>
+        </tr>
+    </tbody>
+</table>
+
 # Examples
 ```c++
 class Range {
