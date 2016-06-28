@@ -134,6 +134,24 @@ class GVARMAIN(attributes) {
 
 The string represents the control key (generated for every control) which is simply the category class name, item class name and control class name joined by underscores. This allows you to reorder your attribute config and not worry about parameter order.
 
+## Enabling/Disabling Control Sets
+A control set is a collection of controls and their labels. This would typically be all the controls in an item as well as the item label. You can enable/disable control sets by doing the following.
+
+```
+private _control = ["ControlIdentifier"] call mars_attributes_fnc_getControl;
+[_control, false] call mars_attributes_fnc_enableControlSet;
+```
+
+This is particularly useful for disabling controls when changing a value of another control.
+
+## Control Functions
+Some control types have functions embedded in them that you can execute to reduce duplicate code. For example if you have a list box and a combo box, and you want to have the combo box update with the values selected in the list box, you can add an event handler to the list box to update the combo box, such as the following.
+
+```
+private _comboBox = ["ComboBox"] call mars_attributes_fnc_getControl;
+[_comboBox, "update"] call mars_attributes_fnc_execControlFunction;
+```
+
 ## Window Size
 You can change the size of the overall window by simply providing another parameter to `openAttributes` such as `[QUOTE(ADDON), "YourAttributeName", [75, 50]] call mars_attributes_fnc_openAttributes`. The first element in the array is the width, the second is the height.
 
