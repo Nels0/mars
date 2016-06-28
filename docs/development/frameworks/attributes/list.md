@@ -4,6 +4,8 @@ title: List
 description: List box containing labels and hidden values. Can also be a multi-select list.
 ---
 
+**There is also LIST_RIGHT which is the exact same but aligns elements to the right.**
+
 # Properties
 
 <table>
