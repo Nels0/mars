@@ -1031,5 +1031,46 @@ $slideDownEnd: 0;
     list-style-type: upper-roman;
 }
 
+.p-content img {
+    border-radius: 3px;
+    image-rendering: auto;
+}
+
+.p-content li {
+    margin: 0;
+}
+
+.post-banner {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    height: calc(75vh / 1.618);
+    z-index: -1;
+}
+
+.post-with-banner {
+    margin-top: 240px;
+}
+
+.post-with-banner .p-title {
+    color: #FFF !important;
+}
+
+.post-with-banner .p-date {
+    color: #CCC !important;
+}
+
+.post-with-banner .p-content {
+    margin-top: 25px !important;
+}
+
+.p-content strong, .p-content b {
+    font-weight: 400;
+}
+
 @import "highlights";
 @import "svg-icons";

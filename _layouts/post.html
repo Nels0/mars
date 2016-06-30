@@ -2,7 +2,11 @@
 layout: default
 ---
 
-<article class="post">
+{% if page.banner %}
+    <div class="post-banner" style="background-image:url({{ page.banner }}); {% if page.bannerPos %}background-position: {{ page.bannerPos }};{% endif %}"></div>
+{% endif %}
+
+<article class="post {% if page.banner %}post-with-banner{% endif %}">
     <h1 class="p-title">{{ page.title }}</h1>
 
     <div class="date p-date">
