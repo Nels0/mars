@@ -10,13 +10,13 @@ The menu strip appears at the top of the Mars interface and hosts context menus.
 All menus should be defined in a `CfgMenu.hpp` file, included in the `config.cpp`. Below you will find an example config.
 
 ```c++
-class GVARMAIN(menu) {
-    class ADDON {
+class mars_menu {
+    class MyAddonName {
         class settings {
             displayName = "Settings";
             class camera {
                 displayName = "Camera";
-                action = QUOTE([ARR_2(QUOTE(QUOTE(ADDON)), 'settings_camera')] call EFUNC(attributes,openAttributes));
+                action = "['MyAddonName', 'settings_camera'] call mars_attributes_fnc_openAttributes";
             };
         };
     };

@@ -10,14 +10,14 @@ The toolbar appears underneath the menu strip and hosts buttons that can either 
 All toolbar configs should be kept in a `CfgToolbar.hpp` file, included in the `config.cpp`. Below you will find an example config.
 
 ```c++
-class GVARMAIN(toolbar) {
-    class ADDON {
+class mars_toolbar {
+    class MyAddonName {
         class night_vision {
             default = false;
             tooltipText = "Night vision";
-            iconOn = QPATHTOF(data\Toolbar\nvg_on_ca.paa);
-            iconOff = QPATHTOF(data\Toolbar\nvg_off_ca.paa);
-            action = QUOTE(_this call FUNC(toggleNightVision));
+            iconOn = "\MyAddonName\data\Toolbar\nvg_on_ca.paa";
+            iconOff = "\MyAddonName\data\Toolbar\nvg_off_ca.paa";
+            action = "_this call myFnc_toggleNightVision";
         };
     };
 };

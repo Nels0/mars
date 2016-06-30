@@ -12,8 +12,8 @@ Context menus appear when right-clicking in the Mars editor. You can setup conte
 3. Inside `CfgContext.hpp` is where you'll define your menu. See below for an example
 
 ```c++
-class GVARMAIN(context) {
-    class ADDON {
+class mars_context {
+    class MyAddonName {
         class MyAmazingContext {
             displayName = "My Amazing Context";
             requiresPosition = false;
@@ -23,13 +23,13 @@ class GVARMAIN(context) {
                 displayName = "Action 1";
                 requiresPosition = false;
                 condition = "alive _this";
-                action = QUOTE(_this call FUNC(myAction1));
+                action = "_this call myFnc_myAction1";
             };
             class MyAction2 {
                 displayName = "Action 2";
                 requiresPosition = false;
                 condition = "alive _this";
-                action = QUOTE(_this call FUNC(myAction2));
+                action = "_this call myFnc_myAction2";
             };
         };
     };

@@ -14,11 +14,11 @@ A consistent UI design throughout Mars is a main priority and in order to achiev
 2. Place the following config in the file
 3. Include `CfgAttributes.hpp` in your `config.cpp` **after** the `script_component.hpp` include
 4. Go through the various control types available in the sidebar
-5. When you're ready to use your attributes class, just call it using `[QUOTE(ADDON), "YourAttributeName"] call mars_attributes_fnc_openAttributes`
+5. When you're ready to use your attributes class, just call it using `["MyAddonName", "YourAttributeName"] call mars_attributes_fnc_openAttributes`
 
 ```c++
-class GVARMAIN(attributes) {
-    class ADDON {
+class mars_attributes {
+    class MyAddonName {
         class YourAttributeName {
             displayName = "";
             actionConfirm = "";
@@ -47,8 +47,8 @@ A more fuller example can be found [here](https://github.com/jameslkingsley/Mars
 Identifiers will allow you to return a control from another part of your attribute config. An example usage would be to have a combo box populated with all groups in the mission, and then an edit box with the group ID of the selected group. When you change the combo box, ideally you want it to change the value of the edit box. See below for an example.
 
 ```c++
-class GVARMAIN(attributes) {
-    class ADDON {
+class mars_attributes {
+    class MyAddonName {
         class groups {
             displayName = "Group Management";
             actionConfirm = "";
@@ -64,17 +64,17 @@ class GVARMAIN(attributes) {
                                     condition = "true";
                                     identifier = "GroupList";
                                     type = "COMBO";
-                                    labels = QUOTE(\
+                                    labels = "\
                                         (allGroups select {\
                                             {!isPlayer _x} count (units _x) == 0\
-                                        }) apply {format [ARR_3('%1 (%2)', groupID _x, name leader _x)]}\
-                                    );
-                                    values = QUOTE(\
+                                        }) apply {format ['%1 (%2)', groupID _x, name leader _x]}\
+                                    ";
+                                    values = "\
                                         (allGroups select {\
                                             {!isPlayer _x} count (units _x) == 0\
                                         }) apply {getPlayerUID (leader _x)}\
-                                    );
-                                    selected = QUOTE(getPlayerUID (leader player));
+                                    ";
+                                    selected = "getPlayerUID (leader player)";
                                     expression = "";
                                 };
                             };
@@ -86,12 +86,12 @@ class GVARMAIN(attributes) {
                                 class Name {
                                     condition = "true";
                                     type = "EDIT";
-                                    textCode = QUOTE(\
+                                    textCode = "\
                                         private _groupCtrl = ['GroupList'] call mars_attributes_fnc_getControl;\
                                         private _leaderUID = _groupCtrl lbData (lbCurSel _groupCtrl);\
                                         private _group = (allGroups select {getPlayerUID (leader _x) == _leaderUID}) select 0;\
                                         groupID _group\
-                                    );
+                                    ";
                                     expression = "";
                                 };
                             };
@@ -108,14 +108,14 @@ class GVARMAIN(attributes) {
 This only applies to the `actionConfirm` property. If you want the user to fill out a form with some data and then process it all at once in one place then you would call a function in `actionConfirm`. From there you can get the value of each control by doing the following:
 
 ```c++
-class GVARMAIN(attributes) {
-    class ADDON {
+class mars_attributes {
+    class MyAddonName {
         class Example {
             displayName = "Example";
-            actionConfirm = QUOTE(\
+            actionConfirm = "\
                 _myControl = [_this, 'MyCategory_MyItem_MyControl'] call mars_attributes_fnc_getControlValue;\
                 systemChat str _myControl;\
-            );
+            ";
             class AttributeCategories {
                 class MyCategory {
                     class AttributeItems {
@@ -153,10 +153,10 @@ private _comboBox = ["ComboBox"] call mars_attributes_fnc_getControl;
 ```
 
 ## Window Size
-You can change the size of the overall window by simply providing another parameter to `openAttributes` such as `[QUOTE(ADDON), "YourAttributeName", [75, 50]] call mars_attributes_fnc_openAttributes`. The first element in the array is the width, the second is the height.
+You can change the size of the overall window by simply providing another parameter to `openAttributes` such as `["MyAddonName", "YourAttributeName", [75, 50]] call mars_attributes_fnc_openAttributes`. The first element in the array is the width, the second is the height.
 
 ## Label and field ratios
-You can change the ratio of the labels and fields by providing another parameter to `openAttributes` such as `[QUOTE(ADDON), "YourAttributeName", nil, [0.33, 0.66]] call mars_attributes_fnc_openAttributes`. The first element in the array is the scale of the label, the second element is the scale of the field.
+You can change the ratio of the labels and fields by providing another parameter to `openAttributes` such as `["MyAddonName", "YourAttributeName", nil, [0.33, 0.66]] call mars_attributes_fnc_openAttributes`. The first element in the array is the scale of the label, the second element is the scale of the field.
 
 ## Storing attributes in the mission config
 You can also create attribute configs straight into the mission by placing the config in the `description.ext`. The attributes framework will first search for the given config in the main `configFile` and lastly check `missionConfigFile`.

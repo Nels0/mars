@@ -73,7 +73,7 @@ class Date {
     year = "date select 0";
     month = "date select 1";
     day = "date select 2";
-    expression = QFUNC(setDateTime);
+    expression = "myFnc_setDateTime";
 };
 
 class FixedDate {
@@ -82,6 +82,6 @@ class FixedDate {
     year = 1945;
     month = 11;
     day = 11;
-    expression = QFUNC(setDateTime);
+    expression = "myFnc_setDateTime";
 };
 ```

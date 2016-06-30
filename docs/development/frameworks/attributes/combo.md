@@ -89,8 +89,8 @@ class Range {
     values[] = {1000, 2000, 3000, 4000, 5000};
     labels[] = {"1000m", "2000m", "3000m", "4000m", "5000m"};
     selected = 1000;
-    expression = QUOTE([ARR_2(_this, 'range')] call FUNC(doThisFunction));
-    onLBSelChanged = QUOTE(systemChat str _this);
+    expression = "[_this, 'range'] call myFnc_doThisFunction";
+    onLBSelChanged = "systemChat str _this";
 };
 
 class Years {
@@ -99,6 +99,6 @@ class Years {
     values = "_years = []; for '_i' from 1982 to 2050 do {_years pushBack _i}; _years";
     labels = "_years = []; for '_i' from 1982 to 2050 do {_years pushBack str _i}; _years";
     selected = "date select 0";
-    expression = QFUNC(doThisFunction);
+    expression = "myFnc_doThisFunction";
 };
 ```

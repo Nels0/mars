@@ -79,8 +79,8 @@ class Players {
     condition = "true";
     type = "LIST";
     multi = true;
-    labels = QUOTE((allPlayers apply {name _x}));
-    values = QUOTE((allPlayers apply {getPlayerUID _x}));
+    labels = "(allPlayers apply {name _x})";
+    values = "(allPlayers apply {getPlayerUID _x})";
     expression = "systemChat str _this";
 };
 ```

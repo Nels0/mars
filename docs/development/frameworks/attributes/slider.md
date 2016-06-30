@@ -74,10 +74,10 @@ class Overcast {
     step = 0.1;
     position = "overcast";
     expression = "";
-    onSliderPosChanged = QUOTE(\
+    onSliderPosChanged = "\
         _ctrl = _this select 0;\
         _ctrl ctrlSetTooltip str (sliderPosition _ctrl);\
-    );
+    ";
 };
 
 class Range {
