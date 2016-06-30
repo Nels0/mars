@@ -35,7 +35,7 @@ There is still a lot more to do, but I'm happy with the progress so far and as y
 ![Roadmap]({{ site.url }}/images/posts/framework-release/roadmap.jpg)
 
 ## Contributing
-While I could write all of the features myself, it would take considerably less time if there were other developers working on it with me. If you're familiar with the ACE/CBA development environment and are interested in Mars, then I encourage you to contribute. There is a comprehensive list of features that need to be built over on the [GitHub issues](https://github.com/marseditor/mars/issues/1) page. If you have an idea that's not on the list, you can submit it as a feature request or speak to me directly - I'm eager to hear what you can come up with.
+While I could write all of the features myself, it would take considerably less time if there were other developers working on it with me. If you are familiar with the ACE/CBA development environment and are interested in Mars, then I encourage you to contribute. There is a comprehensive list of features that need to be built over on the [GitHub issues](https://github.com/marseditor/mars/issues/1) page. If you have an idea that's not on the list, you can submit it as a feature request or speak to me directly - I'm eager to hear what you can come up with.
 
 **Feel free to also join the Mars [Discord](https://discord.gg/0vfzEmmrAOu1T2uk) and [Slack](https://mars-slackin.herokuapp.com/) servers to discuss, develop and troubleshoot.**
 <br />Thank you for reading and stay tuned for more to come.
