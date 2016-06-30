@@ -17,7 +17,7 @@ The Mars framework is a set of components that handle all of the tricky parts of
 * [Toolbar Options]({{ site.url }}/docs/development/frameworks/toolbar/)
 
 ## User Interface
-As you can probably tell, the Mars interface is practically identicle to the Eden interface. This is largely to reduce the amount of UI work required and also to provide a familiar design to users. There are still some parts to be built such as the entity list and map but the main parts are functional and relatively bug-free.
+As you can probably tell, the Mars interface is practically identical to the Eden interface. This is mainly to reduce the amount of UI work required and also to provide a familiar design to users. There are still some parts to be built such as the entity list and map but the main parts are functional and relatively bug-free.
 
 ![Garrison Units, Suppress Position](../images/posts/framework-release/interface_01n.png)
 
