@@ -24,7 +24,7 @@ footer-links:
 
 disqus: marseditor
 google_analytics:
-url: http://marseditor.com
+url: http://127.0.0.1:4000
 baseurl: ""
 permalink: /:title/
 version: v1.2.0
