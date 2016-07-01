@@ -8,7 +8,7 @@ bannerPos: center 92%
 ---
 
 ## What is Mars?
-Mars is a total Zeus replacement providing Arma communities with a customizable editor capable of realtime mission creation and enhancement.  Mars provides integrated mod support; enabling the community to expand its capabilities far beyond Zeus' limited modules.  With Mars, you can add context options, toolbar buttons, menus, modules, and more.  Mars is an extensible in-game editor built for communities.
+Mars is a total Zeus replacement providing Arma communities with a customisable editor capable of realtime mission creation and enhancement. Mars provides integrated mod support; enabling the community to expand its capabilities far beyond Zeus' limited modules. With Mars, you can add context options, toolbar buttons, menus, modules, and more. Mars is an extensible in-game editor built for communities.
 
 ## What is the framework?
 The Mars framework is a set of components that handle all of the tricky parts of a realtime editor for you. Without writing UI's or messing about with controls, you can create new features very quickly. Most of the features currently implemented in the framework are still a work-in-progress but their implementation is unlikely to change.
