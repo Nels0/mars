@@ -23,17 +23,11 @@ class mars_attributes {
             displayName = "";
             actionConfirm = "";
             actionCancel = "";
-            class AttributeCategories {
-                class YourCategoryOne {
-                    class AttributeItems {
-                        class YourItemOne {
-                            displayName = "";
-                            tooltipText = "";
-                            class AttributeControls {
-                                class YourControlOne {};
-                            };
-                        };
-                    };
+            class YourCategoryOne {
+                class YourItemOne {
+                    displayName = "";
+                    tooltipText = "";
+                    class YourControlOne {};
                 };
             };
         };
@@ -53,49 +47,41 @@ class mars_attributes {
             displayName = "Group Management";
             actionConfirm = "";
             actionCancel = "";
-            class AttributeCategories {
-                class Basics {
-                    class AttributeItems {
-                        class Select {
-                            displayName = "Group";
-                            tooltipText = "Select the group to edit.";
-                            class AttributeControls {
-                                class List {
-                                    condition = "true";
-                                    identifier = "GroupList";
-                                    type = "COMBO";
-                                    labels = "\
-                                        (allGroups select {\
-                                            {!isPlayer _x} count (units _x) == 0\
-                                        }) apply {format ['%1 (%2)', groupID _x, name leader _x]}\
-                                    ";
-                                    values = "\
-                                        (allGroups select {\
-                                            {!isPlayer _x} count (units _x) == 0\
-                                        }) apply {getPlayerUID (leader _x)}\
-                                    ";
-                                    selected = "getPlayerUID (leader player)";
-                                    expression = "";
-                                };
-                            };
-                        };
-                        class Name {
-                            displayName = "Name";
-                            tooltipText = "The name of the group appears on its map marker.";
-                            class AttributeControls {
-                                class Name {
-                                    condition = "true";
-                                    type = "EDIT";
-                                    textCode = "\
-                                        private _groupCtrl = ['GroupList'] call mars_attributes_fnc_getControl;\
-                                        private _leaderUID = _groupCtrl lbData (lbCurSel _groupCtrl);\
-                                        private _group = (allGroups select {getPlayerUID (leader _x) == _leaderUID}) select 0;\
-                                        groupID _group\
-                                    ";
-                                    expression = "";
-                                };
-                            };
-                        };
+            class Basics {
+                class Select {
+                    displayName = "Group";
+                    tooltipText = "Select the group to edit.";
+                    class List {
+                        condition = "true";
+                        identifier = "GroupList";
+                        type = "COMBO";
+                        labels = "\
+                            (allGroups select {\
+                                {!isPlayer _x} count (units _x) == 0\
+                            }) apply {format ['%1 (%2)', groupID _x, name leader _x]}\
+                        ";
+                        values = "\
+                            (allGroups select {\
+                                {!isPlayer _x} count (units _x) == 0\
+                            }) apply {getPlayerUID (leader _x)}\
+                        ";
+                        selected = "getPlayerUID (leader player)";
+                        expression = "";
+                    };
+                };
+                class Name {
+                    displayName = "Name";
+                    tooltipText = "The name of the group appears on its map marker.";
+                    class Name {
+                        condition = "true";
+                        type = "EDIT";
+                        textCode = "\
+                            private _groupCtrl = ['GroupList'] call mars_attributes_fnc_getControl;\
+                            private _leaderUID = _groupCtrl lbData (lbCurSel _groupCtrl);\
+                            private _group = (allGroups select {getPlayerUID (leader _x) == _leaderUID}) select 0;\
+                            groupID _group\
+                        ";
+                        expression = "";
                     };
                 };
             };
@@ -116,15 +102,9 @@ class mars_attributes {
                 _myControl = [_this, 'MyCategory_MyItem_MyControl'] call mars_attributes_fnc_getControlValue;\
                 systemChat str _myControl;\
             ";
-            class AttributeCategories {
-                class MyCategory {
-                    class AttributeItems {
-                        class MyItem {
-                            class AttributeControls {
-                                class MyControl {};
-                            };
-                        };
-                    };
+            class MyCategory {
+                class MyItem {
+                    class MyControl {};
                 };
             };
         };
