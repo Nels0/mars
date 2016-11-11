@@ -74,9 +74,10 @@ header {
                 width: 100%;
                 text-align: center;
                 margin-top: 28px;
-                letter-spacing: 5px;
-                font-weight: 600;
+                letter-spacing: 10px;
+                font-weight: 700;
                 color: rgba(0,0,0,0.5);
+                height: 10px;
             }
         }
 
@@ -114,6 +115,7 @@ header {
             padding: 0 10px !important;
             transition: all .15s ease;
             color: rgba(0,0,0,0.66);
+            font-weight: 500;
         }
     }
 
@@ -208,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         font-size: 14px;
         line-height: 22px;
-        font-weight: 300;
+        font-weight: 400;
     }
 }
 
@@ -451,8 +453,8 @@ nav {
     }
 
     h2 {
-        font-size: 26px;
-        font-weight: 300;
+        font-size: 24px;
+        font-weight: 400;
     }
 
     h3 {
@@ -462,20 +464,20 @@ nav {
 
     h1.item {
         font-size: 26px;
-        font-weight: 300;
+        font-weight: 400;
         text-decoration: none !important;
         line-height: 36px;
-        margin-bottom: 5px;
+        margin-bottom: 0;
     }
 
     .entry {
         float: left;
         width: 100%;
         margin: 5px 0 0 0;
-        font-size: 14px;
-        line-height: 24px;
+        font-size: 16px;
+        line-height: 28px;
         text-align: justify;
-        color: #444;
+        color: #000;
         font-weight: 300;
 
         p {
@@ -490,10 +492,10 @@ nav {
 
 .item-date {
     font-size: 14px !important;
-    font-style: italic;
     margin-top: 0 !important;
     float: left;
     width: 100%;
+    color: #000;
 }
 
 .p-title {
@@ -512,8 +514,8 @@ nav {
 .p-content {
     font-size: 16px !important;
     line-height: 32px !important;
-    font-weight: 300 !important;
-    color: #333 !important;
+    font-weight: 400 !important;
+    color: #000 !important;
     margin-top: 10px !important;
 }
 
@@ -551,7 +553,7 @@ nav {
     font-size: 16px;
     float: left;
     width: 100%;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 #toc ol li {
@@ -715,7 +717,7 @@ footer {
     color: #FFF;
     padding: 15px 30px;
     transition: all .15s ease;
-    letter-spacing: 1px;
+    letter-spacing: 0;
 
     &:hover {
         color: #FFF;
@@ -804,16 +806,16 @@ main.main-wide {
 }
 
 .panel-box-4 h1 {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 300;
     color: #444;
     text-align: center;
 }
 
 .panel-box-4 p {
-    font-size: 16px;
+    font-size: 18px;
     color: #666;
-    line-height: 32px;
+    line-height: 36px;
     font-weight: 300;
     text-align: center;
 }
@@ -837,15 +839,15 @@ main.main-wide {
 }
 
 .panel-cbox-wide h1 {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 300;
-    color: #444;
+    color: #000;
 }
 
 .panel-cbox-wide p {
-    font-size: 16px;
-    color: #666;
-    line-height: 32px;
+    font-size: 18px;
+    color: #000;
+    line-height: 36px;
     font-weight: 300;
 }
 
@@ -876,8 +878,9 @@ h1.invert {
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 14px;
-    color: #444;
+    color: #000;
     margin-top: calc(125px * 1.618);
+    font-family: 'Roboto Slab', serif !important;
 }
 
 #godlike-tagline {
@@ -910,7 +913,7 @@ h1.invert {
     pointer-events: none;
 }
 
-$scaleDelay: 2s;
+$scaleDelay: 0s;
 $scaleStart: 0.95;
 $scaleEnd: 1;
 
@@ -945,7 +948,7 @@ $scaleEnd: 1;
     animation: fadein $scaleDelay;
 }
 
-$slideUpDelay: 1s;
+$slideUpDelay: 0s;
 $slideUpStart: 50px;
 $slideUpEnd: 0;
 
@@ -966,7 +969,7 @@ $slideUpEnd: 0;
     to   { transform: translateY($slideUpEnd); opacity: 1; }
 }
 
-$slideDownDelay: 1s;
+$slideDownDelay: 0s;
 $slideDownStart: -50px;
 $slideDownEnd: 0;
 
@@ -1006,7 +1009,7 @@ $slideDownEnd: 0;
 }
 
 .bis {
-    color: #888;
+    color: #666;
     font-size: 1.4vmin;
     text-align: center;
     float: left;
@@ -1076,6 +1079,24 @@ $slideDownEnd: 0;
 
 .p-content strong, .p-content b {
     font-weight: 400;
+}
+
+.news-latest {
+    float: left;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    background: $red;
+
+    a {
+        height: 100%;
+        display: inline-block;
+        line-height: 38px;
+        padding: 0 20px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #FFF;
+    }
 }
 
 @import "highlights";

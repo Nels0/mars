@@ -24,13 +24,13 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<link rel="stylesheet" href="https://mars.arcomm.co/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" type="text/css" href="https://mars.arcomm.co/style.css" />
-<link rel="alternate" type="application/rss+xml" title="Mars - Mars gives players full control over how their mission is played, in real time." href="https://mars.arcomm.co/feed.xml" />
+<link rel="stylesheet" href="http://127.0.0.1:4000/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/style.css" />
+<link rel="alternate" type="application/rss+xml" title="Mars - Mars gives players full control over how their mission is played, in real time." href="http://127.0.0.1:4000/feed.xml" />
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/jameslkingsley/Mars/master/extras/logo/favicon.png">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://mars.arcomm.co/js/toc.js"></script>
+<script src="http://127.0.0.1:4000/js/toc.js"></script>
 
     </head>
 
@@ -39,14 +39,13 @@
     <div class="logo">
         <div class="nav_left">
             <a href="https://github.com/marseditor/mars" class="fa fa-github"></a>
-            <a href="https://mars-slackin.herokuapp.com" class="fa fa-slack"></a>
         </div>
-        <a href="https://mars.arcomm.co" class="logo_img">
+        <a href="http://127.0.0.1:4000" class="logo_img">
             <span class="mars-version">1.0.0</span>
         </a>
         <div class="nav_right">
-            <a href="https://mars.arcomm.co/docs" class="nav_link" style="padding-right: 0 !important">Docs</a>
-            <a href="https://mars.arcomm.co/news" class="nav_link">News</a>
+            <a href="http://127.0.0.1:4000/docs" class="nav_link" style="padding-right: 0 !important">Docs</a>
+            <a href="http://127.0.0.1:4000/news" class="nav_link">News</a>
         </div>
     </div>
 </header>
@@ -82,17 +81,11 @@
             <span class="n">displayName</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
             <span class="n">actionConfirm</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
             <span class="n">actionCancel</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-            <span class="k">class</span> <span class="nc">AttributeCategories</span> <span class="p">{</span>
-                <span class="k">class</span> <span class="nc">YourCategoryOne</span> <span class="p">{</span>
-                    <span class="k">class</span> <span class="nc">AttributeItems</span> <span class="p">{</span>
-                        <span class="k">class</span> <span class="nc">YourItemOne</span> <span class="p">{</span>
-                            <span class="n">displayName</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-                            <span class="n">tooltipText</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-                            <span class="k">class</span> <span class="nc">AttributeControls</span> <span class="p">{</span>
-                                <span class="k">class</span> <span class="nc">YourControlOne</span> <span class="p">{};</span>
-                            <span class="p">};</span>
-                        <span class="p">};</span>
-                    <span class="p">};</span>
+            <span class="k">class</span> <span class="nc">YourCategoryOne</span> <span class="p">{</span>
+                <span class="k">class</span> <span class="nc">YourItemOne</span> <span class="p">{</span>
+                    <span class="n">displayName</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+                    <span class="n">tooltipText</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+                    <span class="k">class</span> <span class="nc">YourControlOne</span> <span class="p">{};</span>
                 <span class="p">};</span>
             <span class="p">};</span>
         <span class="p">};</span>
@@ -112,49 +105,41 @@
             <span class="n">displayName</span> <span class="o">=</span> <span class="s">"Group Management"</span><span class="p">;</span>
             <span class="n">actionConfirm</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
             <span class="n">actionCancel</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-            <span class="k">class</span> <span class="nc">AttributeCategories</span> <span class="p">{</span>
-                <span class="k">class</span> <span class="nc">Basics</span> <span class="p">{</span>
-                    <span class="k">class</span> <span class="nc">AttributeItems</span> <span class="p">{</span>
-                        <span class="k">class</span> <span class="nc">Select</span> <span class="p">{</span>
-                            <span class="n">displayName</span> <span class="o">=</span> <span class="s">"Group"</span><span class="p">;</span>
-                            <span class="n">tooltipText</span> <span class="o">=</span> <span class="s">"Select the group to edit."</span><span class="p">;</span>
-                            <span class="k">class</span> <span class="nc">AttributeControls</span> <span class="p">{</span>
-                                <span class="k">class</span> <span class="nc">List</span> <span class="p">{</span>
-                                    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
-                                    <span class="n">identifier</span> <span class="o">=</span> <span class="s">"GroupList"</span><span class="p">;</span>
-                                    <span class="n">type</span> <span class="o">=</span> <span class="s">"COMBO"</span><span class="p">;</span>
-                                    <span class="n">labels</span> <span class="o">=</span> <span class="s">"\
-                                        (allGroups select {\
-                                            {!isPlayer _x} count (units _x) == 0\
-                                        }) apply {format ['%1 (%2)', groupID _x, name leader _x]}\
-                                    "</span><span class="p">;</span>
-                                    <span class="n">values</span> <span class="o">=</span> <span class="s">"\
-                                        (allGroups select {\
-                                            {!isPlayer _x} count (units _x) == 0\
-                                        }) apply {getPlayerUID (leader _x)}\
-                                    "</span><span class="p">;</span>
-                                    <span class="n">selected</span> <span class="o">=</span> <span class="s">"getPlayerUID (leader player)"</span><span class="p">;</span>
-                                    <span class="n">expression</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-                                <span class="p">};</span>
-                            <span class="p">};</span>
-                        <span class="p">};</span>
-                        <span class="k">class</span> <span class="nc">Name</span> <span class="p">{</span>
-                            <span class="n">displayName</span> <span class="o">=</span> <span class="s">"Name"</span><span class="p">;</span>
-                            <span class="n">tooltipText</span> <span class="o">=</span> <span class="s">"The name of the group appears on its map marker."</span><span class="p">;</span>
-                            <span class="k">class</span> <span class="nc">AttributeControls</span> <span class="p">{</span>
-                                <span class="k">class</span> <span class="nc">Name</span> <span class="p">{</span>
-                                    <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
-                                    <span class="n">type</span> <span class="o">=</span> <span class="s">"EDIT"</span><span class="p">;</span>
-                                    <span class="n">textCode</span> <span class="o">=</span> <span class="s">"\
-                                        private _groupCtrl = ['GroupList'] call mars_attributes_fnc_getControl;\
-                                        private _leaderUID = _groupCtrl lbData (lbCurSel _groupCtrl);\
-                                        private _group = (allGroups select {getPlayerUID (leader _x) == _leaderUID}) select 0;\
-                                        groupID _group\
-                                    "</span><span class="p">;</span>
-                                    <span class="n">expression</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-                                <span class="p">};</span>
-                            <span class="p">};</span>
-                        <span class="p">};</span>
+            <span class="k">class</span> <span class="nc">Basics</span> <span class="p">{</span>
+                <span class="k">class</span> <span class="nc">Select</span> <span class="p">{</span>
+                    <span class="n">displayName</span> <span class="o">=</span> <span class="s">"Group"</span><span class="p">;</span>
+                    <span class="n">tooltipText</span> <span class="o">=</span> <span class="s">"Select the group to edit."</span><span class="p">;</span>
+                    <span class="k">class</span> <span class="nc">List</span> <span class="p">{</span>
+                        <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+                        <span class="n">identifier</span> <span class="o">=</span> <span class="s">"GroupList"</span><span class="p">;</span>
+                        <span class="n">type</span> <span class="o">=</span> <span class="s">"COMBO"</span><span class="p">;</span>
+                        <span class="n">labels</span> <span class="o">=</span> <span class="s">"\
+                            (allGroups select {\
+                                {!isPlayer _x} count (units _x) == 0\
+                            }) apply {format ['%1 (%2)', groupID _x, name leader _x]}\
+                        "</span><span class="p">;</span>
+                        <span class="n">values</span> <span class="o">=</span> <span class="s">"\
+                            (allGroups select {\
+                                {!isPlayer _x} count (units _x) == 0\
+                            }) apply {getPlayerUID (leader _x)}\
+                        "</span><span class="p">;</span>
+                        <span class="n">selected</span> <span class="o">=</span> <span class="s">"getPlayerUID (leader player)"</span><span class="p">;</span>
+                        <span class="n">expression</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+                    <span class="p">};</span>
+                <span class="p">};</span>
+                <span class="k">class</span> <span class="nc">Name</span> <span class="p">{</span>
+                    <span class="n">displayName</span> <span class="o">=</span> <span class="s">"Name"</span><span class="p">;</span>
+                    <span class="n">tooltipText</span> <span class="o">=</span> <span class="s">"The name of the group appears on its map marker."</span><span class="p">;</span>
+                    <span class="k">class</span> <span class="nc">Name</span> <span class="p">{</span>
+                        <span class="n">condition</span> <span class="o">=</span> <span class="s">"true"</span><span class="p">;</span>
+                        <span class="n">type</span> <span class="o">=</span> <span class="s">"EDIT"</span><span class="p">;</span>
+                        <span class="n">textCode</span> <span class="o">=</span> <span class="s">"\
+                            private _groupCtrl = ['GroupList'] call mars_attributes_fnc_getControl;\
+                            private _leaderUID = _groupCtrl lbData (lbCurSel _groupCtrl);\
+                            private _group = (allGroups select {getPlayerUID (leader _x) == _leaderUID}) select 0;\
+                            groupID _group\
+                        "</span><span class="p">;</span>
+                        <span class="n">expression</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
                     <span class="p">};</span>
                 <span class="p">};</span>
             <span class="p">};</span>
@@ -175,15 +160,9 @@
                 _myControl = [_this, 'MyCategory_MyItem_MyControl'] call mars_attributes_fnc_getControlValue;\
                 systemChat str _myControl;\
             "</span><span class="p">;</span>
-            <span class="k">class</span> <span class="nc">AttributeCategories</span> <span class="p">{</span>
-                <span class="k">class</span> <span class="nc">MyCategory</span> <span class="p">{</span>
-                    <span class="k">class</span> <span class="nc">AttributeItems</span> <span class="p">{</span>
-                        <span class="k">class</span> <span class="nc">MyItem</span> <span class="p">{</span>
-                            <span class="k">class</span> <span class="nc">AttributeControls</span> <span class="p">{</span>
-                                <span class="k">class</span> <span class="nc">MyControl</span> <span class="p">{};</span>
-                            <span class="p">};</span>
-                        <span class="p">};</span>
-                    <span class="p">};</span>
+            <span class="k">class</span> <span class="nc">MyCategory</span> <span class="p">{</span>
+                <span class="k">class</span> <span class="nc">MyItem</span> <span class="p">{</span>
+                    <span class="k">class</span> <span class="nc">MyControl</span> <span class="p">{};</span>
                 <span class="p">};</span>
             <span class="p">};</span>
         <span class="p">};</span>
